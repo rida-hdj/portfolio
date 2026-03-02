@@ -1,21 +1,80 @@
-/* Import JetBrains Mono */
+/* Import JetBrains Mono font */
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap');
-/* ===== Profile Card ===== */
 
+/* ===== Global Styles ===== */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #242424;
+    font-family: 'JetBrains Mono', monospace;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+/* Header section */
+header {
+    text-align: center;
+    margin: 50px 0 30px 0;
+}
+
+header h1 {
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+header p {
+    opacity: 0.85;
+}
+
+/* ===== Profile Card ===== */
 .profile-card {
     background-color: #1b1b1b;
-    width: 95%;
+    width: 85%;
     max-width: 850px;
     padding: 40px;
-    margin: 60px 0 40px 0;
+    margin: 60px auto 40px auto;
     border-radius: 25px;
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7);
     display: flex;
+    flex-direction: column;
     align-items: center;
     gap: 30px;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+/* Hover effect on profile card */
+.profile-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.9);
+}
+
+/* Profile image */
+.profile-img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #00ffc3;
+    box-shadow: 0 0 25px rgba(0, 255, 195, 0.4);
+}
+
+/* Profile info text */
+.profile-info h1 {
+    margin: 0;
+    font-size: 28px;
+    letter-spacing: 2px;
+}
+
+.profile-info p {
+    margin-top: 10px;
+    opacity: 0.85;
+}
+
+/* ===== GitHub link ===== */
 .github-link {
     display: inline-flex;
     align-items: center;
@@ -35,80 +94,29 @@
 }
 
 .github-link i {
-    font-size: 20px;
+    font-size: 32px;
+    /* Make the icon larger */
 }
 
-.profile-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.9);
-}
-
-/* Profile Image */
-.profile-img {
-    width: 140px;
-    height: 140px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid #00ffc3;
-    box-shadow: 0 0 25px rgba(0, 255, 195, 0.4);
-}
-
-/* Profile Text */
-.profile-info h1 {
-    margin: 0;
-    font-size: 28px;
-    letter-spacing: 2px;
-}
-
-.profile-info p {
-    margin-top: 10px;
-    opacity: 0.85;
-}
-
-body {
-    margin: 0;
-    padding: 0;
-    background-color: #242424;
-    font-family: 'JetBrains Mono', monospace;
-    color: #ffffff;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-/* Header */
-header {
-    text-align: center;
-    margin: 50px 0 30px 0;
-}
-
-h1 {
-    font-weight: 600;
-    letter-spacing: 2px;
-}
-
-p {
-    opacity: 0.85;
-}
-
-/* Floating Cards */
+/* ===== Sections (floating cards) ===== */
 section {
     background-color: #1b1b1b;
-    width: 95%;
-    max-width: 800px;
+    width: 85%;
+    max-width: 850px;
     padding: 30px;
-    margin: 20px 0;
+    margin: 20px auto;
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Hover effect */
+/* Hover effect on sections */
 section:hover {
     transform: translateY(-6px);
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.9);
 }
 
+/* Section headers */
 h2 {
     margin-top: 0;
     border-bottom: 1px solid #333;
@@ -144,11 +152,99 @@ hr {
     border: none;
     height: 1px;
     background: #333;
-    margin: 30px 0;
+    margin: 30px auto;
+    display: block;
 }
 
 /* Footer */
 footer {
     margin: 40px 0;
     opacity: 0.6;
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 850px) {
+
+    /* Profile card switches to vertical layout */
+    .profile-card {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding: 30px;
+    }
+
+    /* Center profile card and sections horizontally */
+    .profile-card,
+    section {
+        margin: 60px auto 40px auto;
+        /* top auto bottom auto with horizontal centering */
+    }
+
+    /* Smaller profile image */
+    .profile-img {
+        width: 120px;
+        height: 120px;
+    }
+
+    /* Smaller text */
+    .profile-info h1 {
+        font-size: 24px;
+    }
+
+    .profile-info p {
+        font-size: 14px;
+        text-align: center;
+    }
+
+    /* GitHub link smaller */
+    .github-link {
+        font-size: 20px;
+    }
+
+    .github-link i {
+        font-size: 28px;
+    }
+
+    /* Sections width adjustment */
+    section {
+        width: 90%;
+        padding: 20px;
+    }
+
+    hr {
+        width: 80%;
+    }
+}
+
+@media (max-width: 480px) {
+
+    /* Body font smaller on small phones */
+    body {
+        font-size: 14px;
+    }
+
+    /* Profile card padding */
+    .profile-card {
+        padding: 20px;
+    }
+
+    .profile-info h1 {
+        font-size: 20px;
+    }
+
+    .profile-info p {
+        font-size: 12px;
+    }
+
+    .github-link {
+        font-size: 18px;
+    }
+
+    .github-link i {
+        font-size: 24px;
+    }
+
+    section {
+        padding: 15px;
+    }
 }
