@@ -58,8 +58,8 @@ header p {
     height: 140px;
     border-radius: 50%;
     object-fit: cover;
-    border: 3px solid #00ffc3;
-    box-shadow: 0 0 25px rgba(0, 255, 195, 0.4);
+    border: 3px solid #b4befe;
+    box-shadow: rgb(180, 190, 254);
 }
 
 /* Profile info text */
@@ -74,11 +74,14 @@ header p {
     opacity: 0.85;
 }
 
-/* ===== GitHub link ===== */
-.github-link {
-    display: inline-flex;
+.profile-info {
+    display: flex;
+    flex-direction: column;
+}
+
+/* ===== GitHub and Email link ===== */
+.link {
     align-items: center;
-    margin-top: 12px;
     gap: 8px;
     color: #ffffff;
     text-decoration: none;
@@ -88,14 +91,21 @@ header p {
     font-size: 24px;
 }
 
-.github-link:hover {
-    color: #00ffc3;
-    border-color: #00ffc3;
+.link:hover {
+    color: #b4befe;
+    border-color: #b4befe;
 }
 
-.github-link i {
-    font-size: 32px;
-    /* Make the icon larger */
+.link i {
+    font-size: 18px;
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
 }
 
 /* ===== Sections (floating cards) ===== */
@@ -142,8 +152,8 @@ a {
 }
 
 a:hover {
-    color: #00ffc3;
-    border-color: #00ffc3;
+    color: #b4befe;
+    border-color: #b4befe;
 }
 
 /* Divider */
@@ -196,15 +206,6 @@ footer {
         text-align: center;
     }
 
-    /* GitHub link smaller */
-    .github-link {
-        font-size: 20px;
-    }
-
-    .github-link i {
-        font-size: 28px;
-    }
-
     /* Sections width adjustment */
     section {
         width: 90%;
@@ -220,7 +221,7 @@ footer {
 
     /* Body font smaller on small phones */
     body {
-        font-size: 14px;
+        font-size: 16px;
     }
 
     /* Profile card padding */
@@ -236,12 +237,20 @@ footer {
         font-size: 12px;
     }
 
-    .github-link {
-        font-size: 18px;
+    /*
+      FIX: At mobile (<=480px), .link i (24px) is larger than
+      .link text (18px), creating visual imbalance.
+      SOLUTION: Set `.link i { font-size: 18px; }` here (same as
+      the link text), or scale both proportionally (e.g. 16px/14px).
+      Also consider adding an intermediate breakpoint between 480px
+      and 850px for smoother link sizing.
+    */
+    .link {
+        font-size: 14px;
     }
 
-    .github-link i {
-        font-size: 24px;
+    .link i {
+        font-size: 20px;
     }
 
     section {
