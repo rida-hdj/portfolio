@@ -1,259 +1,282 @@
-/* Import JetBrains Mono font */
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap');
 
-/* ===== Global Styles ===== */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     padding: 0;
-    background-color: #242424;
+    background-color: #121212;
     font-family: 'JetBrains Mono', monospace;
-    color: #ffffff;
+    color: #F5F5F5;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    justify-content: flex-start;
+    min-height: 100vh;
 }
 
-/* Header section */
-header {
-    text-align: center;
-    margin: 50px 0 30px 0;
-}
-
-header h1 {
-    font-weight: 600;
-    letter-spacing: 2px;
-    margin: 0;
-}
-
-header p {
-    opacity: 0.85;
-}
-
-/* ===== Profile Card ===== */
-.profile-card {
-    background-color: #1b1b1b;
-    width: 85%;
-    max-width: 850px;
+.container {
+    width: 96vw;
+    height: 96vh;
+    background-color: #121212;
+    border: 2px solid #FFFFFF;
+    border-radius: 4px;
     padding: 40px;
-    margin: 60px auto 40px auto;
-    border-radius: 25px;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7);
+    margin: auto;
+    overflow: auto;
+    scrollbar-width: none;
     display: flex;
     flex-direction: column;
+}
+
+.container::-webkit-scrollbar {
+    display: none;
+}
+
+/* Profile Header */
+.profile-header {
+    display: flex;
     align-items: center;
-    gap: 30px;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    gap: 32px;
 }
 
-/* Hover effect on profile card */
-.profile-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.9);
-}
-
-/* Profile image */
 .profile-img {
-    width: 140px;
-    height: 140px;
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
     object-fit: cover;
-    border: 3px solid #b4befe;
-    box-shadow: rgb(180, 190, 254);
-}
-
-/* Profile info text */
-.profile-info h1 {
-    margin: 0;
-    font-size: 28px;
-    letter-spacing: 2px;
-}
-
-.profile-info p {
-    margin-top: 10px;
-    opacity: 0.85;
+    border: 2px solid #555555;
+    flex-shrink: 0;
 }
 
 .profile-info {
     display: flex;
     flex-direction: column;
-}
-
-/* ===== GitHub and Email link ===== */
-.link {
-    align-items: center;
     gap: 8px;
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: 500;
-    border-bottom: 1px solid #555;
-    transition: color 0.2s ease, border-color 0.2s ease;
-    font-size: 24px;
 }
 
-.link:hover {
-    color: #b4befe;
-    border-color: #b4befe;
+.profile-info h1 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: #FFFFFF;
 }
 
-.link i {
-    font-size: 18px;
+.tagline {
+    margin: 0;
+    opacity: 0.7;
+    font-size: 14px;
+    color: #A8A8A8;
 }
 
 .links {
     display: flex;
-    flex-direction: column;
-    gap: 20px;
-    justify-content: center;
-    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 4px;
 }
 
-/* ===== Sections (floating cards) ===== */
-section {
-    background-color: #1b1b1b;
-    width: 85%;
-    max-width: 850px;
-    padding: 30px;
-    margin: 30px auto;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-/* Hover effect on sections */
-section:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.9);
-}
-
-/* Section headers */
-h2 {
-    margin-top: 0;
-    border-bottom: 1px solid #333;
-    padding-bottom: 12px;
-}
-
-/* Lists */
-ul {
-    list-style: none;
-    padding: 0;
-}
-
-li {
-    margin: 10px 0;
-}
-
-/* Links */
-a {
-    color: #ffffff;
+.link {
+    color: #F5F5F5;
     text-decoration: none;
-    border-bottom: 1px solid #555;
-    transition: color 0.2s ease, border-color 0.2s ease;
+    border-bottom: 1px solid #555555;
+    padding-bottom: 2px;
+    font-size: 15px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
 }
 
-a:hover {
-    color: #b4befe;
-    border-color: #b4befe;
+.link:hover {
+    color: #DCDCDC;
+    border-color: #DCDCDC;
+}
+
+.link i {
+    font-size: 14px;
 }
 
 /* Divider */
 hr {
-    width: 60%;
     border: none;
-    height: 1px;
-    background: #333;
-    margin: 30px auto;
-    display: block;
+    border-top: 1px solid #FFFFFF;
+    margin: 32px 0;
+}
+
+/* Sections */
+section {
+    margin: 0 0 32px 0;
+}
+
+section:first-of-type {
+    margin-top: 32px;
+}
+
+h2 {
+    margin: 0 0 16px 0;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    border-bottom: 1px solid #FFFFFF;
+    padding-bottom: 12px;
+}
+
+section p {
+    margin: 0;
+    line-height: 1.7;
+    opacity: 0.9;
+    max-width: 900px;
+}
+
+/* Skills */
+.skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skill-tag {
+    border: 1px solid #555555;
+    border-radius: 4px;
+    padding: 6px 14px;
+    font-size: 14px;
+    color: #F5F5F5;
+}
+
+/* Projects */
+.project-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 12px;
+}
+
+.project-list a {
+    color: #F5F5F5;
+    text-decoration: none;
+    border: 1px solid #2A2A2A;
+    border-radius: 4px;
+    padding: 14px;
+    font-size: 14px;
+    display: grid;
+    grid-template-rows: auto 54px auto;
+    height: 160px;
+    overflow: hidden;
+}
+
+.project-list a:hover {
+    color: #DCDCDC;
+    border-color: #DCDCDC;
+}
+
+.project-name {
+    font-weight: 600;
+    font-size: 14px;
+    color: #FFFFFF;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-height: 0;
+}
+
+.project-desc {
+    font-size: 12px;
+    color: #A8A8A8;
+    line-height: 1.5;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    min-height: 0;
+}
+
+.project-meta {
+    display: flex;
+    gap: 12px;
+    font-size: 12px;
+    color: #A8A8A8;
+    align-self: end;
+    min-height: 0;
+}
+
+.project-loading,
+.project-error {
+    color: #A8A8A8;
+    font-size: 13px;
+    padding: 10px 0;
+}
+
+/* Bottom */
+.bottom {
+    margin-top: auto;
+}
+
+.source-code {
+    text-align: center;
+}
+
+.source-code a {
+    color: #A8A8A8;
+    text-decoration: none;
+    border-bottom: 1px solid #555555;
+    padding-bottom: 2px;
+    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.source-code a:hover {
+    color: #DCDCDC;
+    border-color: #DCDCDC;
 }
 
 /* Footer */
 footer {
-    margin: 40px 0;
-    opacity: 0.6;
+    text-align: center;
+    margin-top: 32px;
+    color: #A8A8A8;
+    font-size: 12px;
 }
 
-/* ===== Responsive Design ===== */
-@media (max-width: 850px) {
+footer p {
+    margin: 0;
+}
 
-    /* Profile card switches to vertical layout */
-    .profile-card {
+/* Responsive */
+@media (max-width: 640px) {
+    .container {
+        padding: 24px;
+    }
+
+    .profile-header {
         flex-direction: column;
-        align-items: center;
-        gap: 20px;
-        padding: 30px;
-    }
-
-    /* Center profile card and sections horizontally */
-    .profile-card,
-    section {
-        margin: 30px auto 40px auto;
-        /* top auto bottom auto with horizontal centering */
-    }
-
-    /* Smaller profile image */
-    .profile-img {
-        width: 120px;
-        height: 120px;
-    }
-
-    /* Smaller text */
-    .profile-info h1 {
-        font-size: 24px;
-    }
-
-    .profile-info p {
-        font-size: 14px;
         text-align: center;
+        gap: 20px;
     }
 
-    /* Sections width adjustment */
-    section {
-        width: 90%;
-        padding: 20px;
-    }
-
-    hr {
-        width: 80%;
-    }
-}
-
-@media (max-width: 480px) {
-
-    /* Body font smaller on small phones */
-    body {
-        font-size: 16px;
-    }
-
-    /* Profile card padding */
-    .profile-card {
-        padding: 20px;
+    .profile-img {
+        width: 100px;
+        height: 100px;
     }
 
     .profile-info h1 {
-        font-size: 20px;
+        font-size: 22px;
     }
 
-    .profile-info p {
-        font-size: 12px;
+    .links {
+        justify-content: center;
     }
 
-    /*
-      FIX: At mobile (<=480px), .link i (24px) is larger than
-      .link text (18px), creating visual imbalance.
-      SOLUTION: Set `.link i { font-size: 18px; }` here (same as
-      the link text), or scale both proportionally (e.g. 16px/14px).
-      Also consider adding an intermediate breakpoint between 480px
-      and 850px for smoother link sizing.
-    */
-    .link {
-        font-size: 14px;
-    }
-
-    .link i {
-        font-size: 20px;
-    }
-
-    section {
-        padding: 15px;
+    .skill-list {
+        justify-content: center;
     }
 }

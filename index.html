@@ -11,15 +11,16 @@
 
 <body>
 
-    <header>
-        <header class="profile-card">
+    <div class="container">
+
+        <header class="profile-header">
             <img src="https://avatars.githubusercontent.com/u/192655937?s=400&u=d9241e0dab3f162bccd571bd4d42858ea79973c1&v=4"
                 alt="Profile Picture" class="profile-img">
 
             <div class="profile-info">
+                <h1>rida-hdj</h1>
+                <p class="tagline">Linux User | Software Developer | Open Source Enthusiast</p>
                 <div class="links">
-                    <h1>rida-hdj</h1>
-                    <p>Linux User | Tech Enthusiast | AOSP Explorer</p>
                     <a href="https://github.com/rida-hdj" target="_blank" class="link">
                         <i class="fa fa-github"></i> rida-hdj
                     </a>
@@ -30,56 +31,53 @@
             </div>
         </header>
 
-        <hr>
-
         <section>
-            <h2>Who am I?</h2>
+            <h2>About Me</h2>
             <p>
-                I'm Rida, a tech-savvy person. I'm a Linux user who self-hosts various services.
-                I'm passionate about open-source software and currently customizing my system while exploring AOSP.
+                I'm Rida, a Linux user and software developer,
+                interested in open-source software, programming, and computer systems.
+                I enjoy building small tools, experimenting with Linux,
+                and learning how software works under the hood.
+                Currently exploring Rust and working on projects around Linux and open-source software.
             </p>
         </section>
 
         <section>
             <h2>Skills</h2>
-            <ul>
-                <li>Linux</li>
-                <li>NixOS</li>
-                <li>Neovim</li>
-                <li>Self-hosting</li>
-            </ul>
+            <div class="skill-list">
+                <span class="skill-tag">Linux</span>
+                <span class="skill-tag">NixOS</span>
+                <span class="skill-tag">Rust</span>
+                <span class="skill-tag">Git</span>
+                <span class="skill-tag">Neovim</span>
+                <span class="skill-tag">Self-hosting</span>
+            </div>
         </section>
 
         <section>
-            <h2>My Projects</h2>
-            <ul>
-                <li>
-                    <a href="https://github.com/rida-hdj/nvim-simple-config" target="_blank">
-                        Neovim Config
-                    </a>
-                </li>
-                <li>
-                    <a href="https://github.com/rida-hdj/nixos" target="_blank">
-                        NixOS Config
-                    </a>
-                </li>
-                <li>
-                    <a href="https://github.com/rida-hdj/docker-selfhost.git" target="_blank">
-                        Docker services
-                    </a>
-                </li>
+            <h2>Projects</h2>
+            <ul class="project-list" id="project-list">
+                <li class="project-loading">Loading repositories...</li>
             </ul>
         </section>
 
-        <hr>
+        <div class="bottom">
+            <hr>
 
-        <a href="https://github.com/rida-hdj/portfolio.git" target="_blank" class="source-code">
-            <i class="fa fa-github"></i> source code
-        </a>
+            <div class="source-code">
+                <a href="https://github.com/rida-hdj/portfolio.git" target="_blank">
+                    <i class="fa fa-github"></i> source code
+                </a>
+            </div>
 
-        <footer>
-            <p>© 2026 Rida-hdj</p>
-        </footer>
+            <footer>
+                <p>&copy; 2026 Rida-hdj</p>
+            </footer>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
 
 </body>
 
